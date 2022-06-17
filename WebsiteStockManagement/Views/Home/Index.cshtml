@@ -1,0 +1,54 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+</div>
+
+<div class="row">
+    @if (ViewBag.hideMenuItem == 0)
+    {
+        <div class="col-md-4">
+            <h2>@Html.ActionLink("View Products", "Index", "Products")</h2>
+            <p>
+                Here you may view all the products entered by yourself.
+                You may sort the products by product name and date range.
+            </p>
+        </div>
+        <div class="col-md-4">
+            <h2>@Html.ActionLink("Add A Product", "Create", "Products")</h2>
+            <p>
+                Here you can add a product , you need to enter the neccssary data in order to
+                create a product.
+            </p>
+        </div>
+    }
+    else if (ViewBag.hideMenuItem == 1)
+    {
+
+        <div class="col-md-4">
+            <h2>@Html.ActionLink("View Products", "Index", "Products")</h2>
+            <p>
+                Here you can view all the products entered by the farmers.
+                You can sort all the products by farmer name , product name and date range.
+            </p>
+        </div>
+        <div class="col-md-4">
+            <h2>@Html.ActionLink("Create a Farmer", "Create", "Users")</h2>
+            <p>
+                Employee a new farmer and enter him into the database!
+                Enter the neccssary fields to create a new farmer
+            </p>
+
+        </div>
+        <div class="col-md-4">
+            <h2>@Html.ActionLink("View Farmers", "Index", "Users")</h2>
+            <p>
+                View all the famers that are currently in the database , you can also delete the farmers from the database.
+            </p>
+        </div>
+    }
+
+</div>
+
